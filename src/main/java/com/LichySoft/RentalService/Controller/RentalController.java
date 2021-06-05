@@ -21,9 +21,9 @@ public class RentalController {
     }
 
     @PutMapping("/setAvailable/{id}")
-    public ResponseEntity<Movie> setAvailable(@PathVariable Long id){
+    public ResponseEntity<Void> setAvailable(@PathVariable Long id){
         rentalService.returnMovie(id);
-        return  ResponseEntity.ok(rentalService.getMovie(id));
+        return  ResponseEntity.ok().build();
     }
 
 }
